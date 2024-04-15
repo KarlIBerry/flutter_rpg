@@ -1,0 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_rpg/models/character.dart';
+import 'package:flutter_rpg/models/vocation.dart';
+
+class CharaterStore extends ChangeNotifier{
+
+
+  final List<Character> _characters = [
+  Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
+  Character(id: '2', name: 'Jonny', vocation: Vocation.junkie, slogan: 'Light me up...'),
+  Character(id: '3', name: 'Crimson', vocation: Vocation.raider, slogan: 'Fire in the hole!'),
+  Character(id: '4', name: 'Karl', vocation: Vocation.ninja, slogan: 'Will get the Flutter JO.'),
+  ];
+
+  get characters => _characters;
+
+}
