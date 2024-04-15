@@ -55,3 +55,4 @@ android/settings.gradle
 android/app/build.gradle
 ios/Runner.xcodeproj/project.pbxproj
 macos/Runner.xcodeproj/project.pbxproj
+pubspec.lock
