@@ -14,6 +14,7 @@ class SkillList extends StatefulWidget {
 }
 
 class _SkillListState extends State<SkillList> {
+
   late List<Skill> availableSkills;
   late Skill selectedSkill;
 
@@ -26,8 +27,8 @@ class _SkillListState extends State<SkillList> {
 
     if (widget.character.skills.isEmpty) {
       selectedSkill = availableSkills[0];
-      }
-    if(widget.character.skills.isNotEmpty) {
+    }
+    if (widget.character.skills.isNotEmpty) {
       selectedSkill = widget.character.skills.first;
     }
 
@@ -57,7 +58,8 @@ class _SkillListState extends State<SkillList> {
                   color: skill == selectedSkill ? Colors.yellow : Colors.transparent,
                   child: GestureDetector(
                     onTap: () {
-                      setState  ((){
+                      setState(() {
+                        widget.character.updateSkills(skill);
                         selectedSkill = skill;
                       });
                     },
@@ -69,6 +71,7 @@ class _SkillListState extends State<SkillList> {
               }).toList()
             ),
             const SizedBox(height:10),
+            StyledText(selectedSkill.name),
 
           ],
         ),

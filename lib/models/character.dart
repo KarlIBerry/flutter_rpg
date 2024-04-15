@@ -2,15 +2,12 @@ import 'package:flutter_rpg/models/skill.dart';
 import 'package:flutter_rpg/models/stats.dart';
 import 'package:flutter_rpg/models/vocation.dart';
 
-class Character with Stats  {
+class Character with Stats {
 
   // constructor
   Character({
-    required this.name,
-    required this.slogan,
-    required this.vocation,
-    required this.id,
-    });
+    required this.name, required this.slogan, required this.vocation, required this.id,
+  });
 
   // fields
   final Set<Skill> skills = {};
@@ -21,27 +18,24 @@ class Character with Stats  {
   bool _isFav = false;
 
   // getters
-  bool get isFav => _isFav;
+  get isFav => _isFav;
 
   // methods
-  void toggleIsFav(){
+  void toggleIsFav() {
     _isFav = !_isFav;
   }
 
-  void uopdateSkill(Skill skill) {
+  void updateSkills(Skill skill) {
     skills.clear();
     skills.add(skill);
   }
-
 }
-
 
 // dummy character data
 
 List<Character> characters = [
-  Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'I am the best!'),
-  Character(id: '2', name: 'John', vocation: Vocation.junkie, slogan: 'Let me sleep!'),
-  Character(id: '3', name: 'Marry', vocation: Vocation.raider, slogan: 'I am the rubbish!'),
-  Character(id: '4', name: 'Karl', vocation: Vocation.ninja, slogan: 'I will get this job done!'),
-
+  Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
+  Character(id: '2', name: 'Jonny', vocation: Vocation.junkie, slogan: 'Light me up...'),
+  Character(id: '3', name: 'Crimson', vocation: Vocation.raider, slogan: 'Fire in the hole!'),
+  Character(id: '4', name: 'Shaun', vocation: Vocation.ninja, slogan: 'Alright then gang.'),
 ];
