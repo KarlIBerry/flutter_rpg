@@ -23,7 +23,6 @@ class CharacterStore extends ChangeNotifier{
     _characters.add(character);
     notifyListeners();
   }
-
   // save (update) character
 
   // delete character
