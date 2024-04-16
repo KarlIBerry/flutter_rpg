@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_rpg/models/skill.dart';
 import 'package:flutter_rpg/models/stats.dart';
 import 'package:flutter_rpg/models/vocation.dart';
@@ -28,6 +29,18 @@ class Character with Stats {
   void updateSkills(Skill skill) {
     skills.clear();
     skills.add(skill);
+  }
+
+  Map<String, dynamic> toFirestore() {
+    return {
+      'name': name,
+      'slogan': slogan,
+      'isFav': _isFav,
+      'vocation': vocation.toString(),
+      'skills': skills.map((s) => s.id).toList(),
+      'stats' : statsAsMap,
+      'points': points,
+    };
   }
 }
 
