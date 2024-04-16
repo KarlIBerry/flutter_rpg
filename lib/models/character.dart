@@ -29,7 +29,7 @@ class Character with Stats {
     _isFav = !_isFav;
   }
 
-  void updateSkills(Skill skill) {
+  void updateSkill(Skill skill) {
     skills.clear();
     skills.add(skill);
   }
@@ -66,10 +66,20 @@ class Character with Stats {
     // update skills
     for (String id in data ['skills']) {
       Skill skill = allSkills.firstWhere((element) => element.id == id);
-      character.updateSkills(skill);
+      character.updateSkill(skill);
     }
+
+    // set is fav
+    if (data['isFav'] == true) {
+      character.toggleIsFav();
+
+    }
+
+    return character;
   }
 }
+
+
 
 // dummy character data
 
