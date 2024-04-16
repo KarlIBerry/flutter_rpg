@@ -72,9 +72,14 @@ class Character with Stats {
     // set is fav
     if (data['isFav'] == true) {
       character.toggleIsFav();
-
     }
 
+
+    // assign stats &points
+    character.setStats(
+      points: data['points'],
+      stats: data['stats'],
+    );
     return character;
   }
 }
