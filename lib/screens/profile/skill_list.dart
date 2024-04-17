@@ -67,7 +67,7 @@ class _SkillListState extends State<SkillList> {
                         });
                       },
                       child: Image.asset('assets/img/skills/${skill.image}',
-                        width: 70,
+                        width: 65,
                       ),
                     ),
                   );
