@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/screens/profile/profile.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
@@ -17,17 +18,19 @@ class CharacterCard extends StatelessWidget {
         child: Row(
           children: [
             Image.asset('assets/img/vocations/${character.vocation.image}',
-              width: 80,
+              width: 70,
             ),
 
             const SizedBox(width: 20),
 
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                StyledHeading(character.name),
-                StyledText(character.vocation.title),
-                ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  StyledHeading(character.name),
+                  StyledText(character.vocation.title),
+                  ],
+              ),
             ),
 
             const Expanded(
